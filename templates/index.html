@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
+    <title>Car Registration Data - 2023</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
+
 <body>
-    
+    <header>
+        <h1>Zarejestrowane auta - 2023</h1>
+    </header>
+
+    <section>
+        <h2>Podlasie</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ilość zarejestrowanych aut</th>
+                    <th>Marka</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for key, value in marks_counts.items() %}
+                    <tr> 
+                        <td>{{ key }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                {% endfor %}
+                <!-- more rows  -->
+            </tbody>
+        </table>
+    </section>
 </body>
+
 </html>
